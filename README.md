@@ -6,6 +6,8 @@
 
 A comprehensive library management system with AI-powered assistance built with React, Express, and Google Gemini AI.
 
+**📖 [Quick Start Guide](QUICKSTART.md)** | **❗ [Troubleshooting](TROUBLESHOOTING.md)**
+
 View your app in AI Studio: https://ai.studio/apps/366b6aec-4e38-4b77-b483-5e6b2fef7924
 
 ## 🚀 Quick Start
