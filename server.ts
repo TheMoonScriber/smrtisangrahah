@@ -27,6 +27,16 @@ async function startServer() {
 
   app.use(express.json({ limit: '2mb' }));
 
+  // Health check endpoint
+  app.get("/api/health", (req, res) => {
+    res.json({ 
+      status: "ok", 
+      message: "Server is running",
+      timestamp: new Date().toISOString(),
+      port: PORT
+    });
+  });
+
   // Mock Database
   let categories = ["Philosophy", "Strategy", "Poetry", "Fiction", "History", "Science"];
   
@@ -573,7 +583,17 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`\n${'='.repeat(60)}`);
+    console.log(`🚀 Smrtisangrahah Server Started Successfully!`);
+    console.log(`${'='.repeat(60)}`);
+    console.log(`📍 Local:            http://localhost:${PORT}`);
+    console.log(`🌐 Network:          http://0.0.0.0:${PORT}`);
+    console.log(`❤️  Health Check:     http://localhost:${PORT}/api/health`);
+    console.log(`${'='.repeat(60)}`);
+    console.log(`\n👤 Default Admin Login:`);
+    console.log(`   Username: admin`);
+    console.log(`   Password: admin123`);
+    console.log(`\n📚 Press Ctrl+C to stop the server\n`);
   });
 }
 
